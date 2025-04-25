@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+# EduPath
+**Tagline:** *Learn Smarter, Teach Easier*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+EduPath is an AI-powered learning platform built for the 2025 Hackathon. It empowers students with personalized learning through an AI chatbot (**Gradus**) and assignment management, while enabling teachers to create content efficiently with AI tools (**SmartChalk**) and track progress in real-time.
 
-## Available Scripts
+Built with **React**, **Node.js**, **MongoDB**, and **Google Gemini AI**, EduPath aims to make education more engaging, accessible, and efficient.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Features](#features)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Usage](#usage)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Student Dashboard**: Manage assignments (tests, homework, learning paths, resources) with tabs for easy navigation.
+- **Gradus AI Chatbot**: Get step-by-step answers to any question, powered by Google Gemini AI.
+- **SmartChalk**: AI-driven quiz generator for teachers to create assignments quickly.
+- **Real-Time Progress Tracking**: Teachers can monitor student completion and scores instantly.
+- **Accessibility**: Text-to-speech for quiz questions to support diverse learners.
+- **Responsive Design**: Light/dark theme support with a clean, user-friendly interface.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Frontend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React  
+- Axios (API requests)  
+- react-toastify (notifications)  
+- CSS (custom styles with light/dark themes)  
+- Web Speech API (text-to-speech)
 
-### `npm run eject`
+### Backend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Node.js  
+- Express  
+- MongoDB (via Mongoose)  
+- JSON Web Tokens (JWT) for authentication  
+- Multer (file uploads)  
+- dotenv (environment variables)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### APIs
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Google Generative AI (Gemini 1.5-flash-latest) for Gradus and SmartChalk  
+- Custom REST API for authentication, assignments, and AI queries
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Other
 
-## Learn More
+- CORS  
+- MongoDB connection via `MONGO_URI`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Installation
 
-### Code Splitting
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Node.js (v16 or higher)  
+- MongoDB (local or cloud via MongoDB Atlas)  
+- Google Gemini API key  
+- Git
 
-### Analyzing the Bundle Size
+### Steps
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/edupath.git
+   cd edupath
 
-### Making a Progressive Web App
+2. **Set up the server**
+    ````
+    cd server
+    npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    Create a .env file in server/ with the following:
+    MONGO_URI=your_mongodb_connection_string
+    JWT_SECRET=your_jwt_secret
+    GEMINI_API_KEY=your_gemini_api_key
+    PORT=5000
+    
+    Start the server:
+    npm start
+    
+3. Set Up the Client
+   ````
+   cd ../client
+    npm install
+    npm start
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Usage
+Teacher Account
+Login with:
 
-### Deployment
+Role: teacher
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Username: teacher1
 
-### `npm run build` fails to minify
+Password: password123
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Create assignments using the Assignment Form or generate quizzes with SmartChalk.
+
+Track student progress in the Progress Tracking section.
+
+Student Account
+Login with:
+
+Role: student
+
+Username: student1
+
+Password: password123
+
+Roll No: S001
+
+Class: 10A
+
+Navigate through tabs: Tests, Homework, Learning Paths, Resources, Gradus.
+
+Use Gradus to ask questions like:
+"What is photosynthesis?"
+
+Features in Action
+Ask Gradus for help via the Gradus tab.
+
+Use SmartChalk to generate quiz questions like:
+"Generate 3 math questions"
+
+Complete assignments and view real-time progress updates.
